@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+
+</head>
+<body>
+<div id="gamecontainer">
+    
+<h1>TrizTacToe</h1>
+
+<img 
+  src="trizzy.jpg" 
+  id="letterBtn" 
+  class="letter-btn" 
+  alt="open letter"
+/>
+
+
+
+<div class="emoji-select">
+  <p>Choose your symbols</p>
+
+  <button class="emoji-pair" data-p1="❌" data-p2="⭕">❌ / ⭕</button>
+  <button class="emoji-pair" data-p1="😈" data-p2="😇">😈 / 😇</button>
+  <button class="emoji-pair" data-p1="🔥" data-p2="💧">🔥 / 💧</button>
+  <button class="emoji-pair" data-p1="🐱" data-p2="🐶">🐱 / 🐶</button>
+  <button class="emoji-pair" data-p1="🗿" data-p2="💀">🗿 / 💀</button>
+</div>
+
+
+<div class="wrapper">
+    <div class="player-setup">
+  <input type="text" id="player1" placeholder="Player 1 name" />
+  <input type="text" id="player2" placeholder="Player 2 name" />
+  <button id="startGame">Start Game</button>
+</div>
+
+   
+<div id="cellcontainer"> 
+    
+    <div cellindex="0" class="cell"></div>
+<div cellindex="1" class="cell"></div>
+<div cellindex="2" class="cell"></div>
+<div cellindex="3" class="cell"></div>
+<div cellindex="4" class="cell"></div>
+<div cellindex="5" class="cell"></div>
+<div cellindex="6" class="cell"></div>
+<div cellindex="7" class="cell"></div>
+<div cellindex="8" class="cell"></div>
+
+
+</div>
+
+<h2 id="statusText"></h2>
+<button id="restartbtn">Restart</button>
+
+ <div id="popup" class="popup hidden">
+    <div class="popup-box">
+      <p id="popupText"></p>
+      <button id="closePopup">OK</button>
+    </div>
+</div>
+
+<div id="letterPopup" class="popup hidden">
+  <div class="popup-box">
+
+    <img src="us.jpg" class="letter-img" />
+
+    <div class="letter-content">
+      <p id="letterText">
+        Hey 👀  
+      Ye ek chhota sa message mere side se....ahem ahem so first of all HAPPIEST BIRTHDAY TRIZZY since mai iss baar kuch gift nhi de saka isliye this a small gift from my side isme thoda time laga but i hope tujhe 
+pasand aaye.I know kuch special nahi hai ye but i tried my best to make it as personal and special i can to mai bas 
+itna chahta hu tu ye enjoy kare aur u have a marvellous day. AND U STAY BEAUTIFUL AND SMART LIKE THIS ALWAYS aur meri best friend bhi.
+Ill keep putting some updates in it. So enjoy bestie❣️❣️ and i hope tera ye saal zindagi ka best saal i wish you achieve everything you ever wanted
+ADIOS....!!!
+
+      </p>
+      <button id="closeLetter">Close</button>
+    </div>
+  </div>
+
+  
+
+  
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

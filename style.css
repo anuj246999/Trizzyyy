@@ -1,0 +1,264 @@
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 2px,solid;
+    box-shadow: 0 0 0 2px;
+    font-size: 45px;
+    font-family: cursive;
+    line-height: 75px;
+    cursor: pointer;
+    
+}
+#gamecontainer{
+    text-align: center;
+}
+
+#cellcontainer{
+display: grid;
+grid-template-columns: repeat(3,75px);
+ grid-template-rows: repeat(3, 75px);
+gap: 6px;
+background-color: rgb(236, 228, 218);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("softpastel.jpg");
+  margin: 0;
+  
+}
+
+.container {
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  
+   
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+
+
+}
+#gameContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 6px;
+  margin: 20px auto;
+  
+}
+.cell {
+  border: 3px solid black;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  transition: 0.2s;
+  border: 2px solid black;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cell:hover {
+  background: #f0f0f0;
+}
+.win {
+  background-color: #4CAF50;
+  color: white;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+#statusText {
+  font-size: 1.4rem;
+  margin: 15px 0;
+  font-weight: 600;
+}
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #333;
+}
+.player-setup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.player-setup input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.player-setup button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+.win {
+  background: #7CFFB2;
+  transition: 0.3s ease;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+.emoji-select{ 
+  padding: 15px;
+
+}
+p{
+  font-weight: 900;
+}
+.emoji-pair {
+  padding: 10px;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.emoji-pair:hover {
+  background: #f0f0f0;
+}
+
+.emoji-selected {
+  border: 3px solid #00ff99;
+  background: rgba(0, 255, 153, 0.15);
+}
+.letter-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.letter-btn:hover {
+  transform: scale(1.1);
+}
+.popup-box {
+  width: 320px;
+  height: 320px;          /* 👈 SAME AS WIDTH */
+  background: white;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  text-align: center;
+}
+
+
+.letter-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.letter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popup-box {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#letterText {
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-y: auto;
+  max-height: 150px;
+}
+.popup-box {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
