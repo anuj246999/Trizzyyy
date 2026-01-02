@@ -271,21 +271,9 @@ p{
     padding: 20px;
   }
 }
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  width: 90vw;
-  max-width: 320px;
-  margin: auto;
-}
-
-.cell {
-  aspect-ratio: 1 / 1;
-  font-size: 2.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.emoji-disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 
