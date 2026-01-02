@@ -61,6 +61,8 @@ let player2Symbol = "O";
 
 let currentPlayer = "";
 let running = false;
+let emojiLocked = false;
+
 
 // ==========================
 // INIT
@@ -158,6 +160,12 @@ function restartGame() {
     cell.textContent = "";
     cell.classList.remove("win");
   });
+  // 🔓 UNLOCK EMOJIS AGAIN
+  gameLocked = false;
+  emojiButtons.forEach(btn => {
+    btn.classList.remove("emoji-selected");
+    btn.classList.remove("emoji-disabled");
+  });
 
   statusText.textContent = `${player1Name}'s turn`;
 }
@@ -165,19 +173,11 @@ function restartGame() {
 // ==========================
 // START GAME BUTTON
 // ==========================
-startBtn.addEventListener("click", () => {
-  player1Name = player1Input.value || "Player 1";
-  player2Name = player2Input.value || "Player 2";
-
-  statusText.textContent = `${player1Name}'s turn`;
-
-  document.querySelector(".player-setup").style.display = "none";
-
   const emojiButtons = document.querySelectorAll(".emoji-pair");
 
 emojiButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-
+ if (emojiLocked) return; // 🔒 LOCKED → kuch nahi hoga
     // remove previous highlight
     emojiButtons.forEach(b => b.classList.remove("emoji-selected"));
 
@@ -193,8 +193,24 @@ emojiButtons.forEach(btn => {
   });
 });
 
+startBtn.addEventListener("click", () => {
+  player1Name = player1Input.value || "Player 1";
+  player2Name = player2Input.value || "Player 2";
+
+  statusText.textContent = `${player1Name}'s turn`;
+
+  document.querySelector(".player-setup").style.display = "none";
+
+  // 🔒 LOCK EMOJI SELECTION
+  gameLocked = true;
+
+  emojiButtons.forEach(btn => {
+    btn.classList.add("emoji-disabled");
+  });
+
   initializeGame();
 });
+
 
 
 // ==========================
