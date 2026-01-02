@@ -62,6 +62,7 @@ let player2Symbol = "O";
 let currentPlayer = "";
 let running = false;
 let emojiLocked = false;
+let gameStarted = false; // full session started or not
 
 
 // ==========================
@@ -154,21 +155,22 @@ function checkWinner() {
 function restartGame() {
   running = true;
   currentPlayer = player1Symbol;
+
   options = ["", "", "", "", "", "", "", "", ""];
 
   cells.forEach(cell => {
     cell.textContent = "";
     cell.classList.remove("win");
   });
-  // 🔓 UNLOCK EMOJIS AGAIN
-  gameLocked = false;
-  emojiButtons.forEach(btn => {
-    btn.classList.remove("emoji-selected");
-    btn.classList.remove("emoji-disabled");
-  });
+
+  // 🔒 emojis SHOULD STAY LOCKED if game already started
+  if (gameStarted) {
+    gameLocked = true;
+  }
 
   statusText.textContent = `${player1Name}'s turn`;
 }
+
 
 // ==========================
 // START GAME BUTTON
@@ -198,18 +200,18 @@ startBtn.addEventListener("click", () => {
   player2Name = player2Input.value || "Player 2";
 
   statusText.textContent = `${player1Name}'s turn`;
-
   document.querySelector(".player-setup").style.display = "none";
 
-  // 🔒 LOCK EMOJI SELECTION
-  gameLocked = true;
+  gameLocked = true;      // emoji lock
+  gameStarted = true;    // 🔥 IMPORTANT
 
-  emojiButtons.forEach(btn => {
-    btn.classList.add("emoji-disabled");
-  });
+  emojiButtons.forEach(btn =>
+    btn.classList.add("emoji-disabled")
+  );
 
   initializeGame();
 });
+
 
 
 
